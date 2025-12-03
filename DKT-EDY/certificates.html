@@ -2,298 +2,181 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <link href="dist/output.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sertifikalar – DKT Elanur Damla Yılmaz</title>
-  <link href="speech-therapy/src/css/style.css" rel="stylesheet" />
-
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-cream font-sans">
+<body class="bg-slate-50 font-sans text-slate-800">
 
-<!-- NAVBAR -->
-<nav class="bg-cream shadow-sm">
+<nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    
-    <a href="index.html" class="text-forest text-xl font-semibold">DKT – Klinik</a>
-
-    <div class="space-x-6 text-forest font-medium">
-      <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
-      <a href="about.html" class="hover:text-terracotta">Hakkında</a>
-      <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
-      <a href="contact.html" class="hover:text-terracotta">İletişim</a>
+    <a href="index.html" class="text-emerald-800 text-2xl font-bold tracking-tight">DKT – Klinik</a>
+    <div class="hidden md:flex space-x-8 text-emerald-900 font-medium">
+      <a href="index.html" class="hover:text-orange-500 transition-colors">Ana Sayfa</a>
+      <a href="about.html" class="hover:text-orange-500 transition-colors">Hakkında</a>
+      <a href="services.html" class="hover:text-orange-500 transition-colors">Hizmetler</a>
+      <a href="certificates.html" class="text-orange-500 font-semibold">Sertifikalar</a>
+      <a href="contact.html" class="bg-emerald-800 text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors shadow-lg">İletişim</a>
     </div>
-
   </div>
 </nav>
 
+<section class="relative bg-white py-16" data-aos="fade-in">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <span class="text-orange-500 font-bold tracking-widest uppercase text-xs mb-2 block">MESLEKİ GELİŞİM</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-6">Eğitim ve Sertifikalar</h1>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            Güncel literatürü takip etmek ve danışanlarıma en etkili yöntemleri sunmak için katıldığım sertifikalı eğitim programları ve kongreler.
+        </p>
+    </div>
+</section>
 
-  <!-- HEADER -->
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-forest">Sertifikalar</h1>
-    <p class="text-forest/70 mt-2 max-w-2xl">
-      Aldığım eğitimler, seminerler ve uzmanlık programlarıyla mesleki gelişimime önem veriyor; danışanlarıma
-      kanıta dayalı ve güncel yaklaşımlar sunmayı hedefliyorum.
-    </p>
-  </section>
-
-<!-- =================== MODAL =================== -->
-<div id="certificateModal"
-     class="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center hidden z-[999]">
-  <div class="max-w-3xl w-full bg-white rounded-xl p-4 relative shadow-2xl">
-
-    <button onclick="closeModal()"
-            class="absolute top-3 right-3 bg-forest text-white px-2 py-1 text-sm rounded">
+<div id="certificateModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm flex justify-center items-center hidden z-[999] p-4 transition-opacity duration-300">
+  <div class="max-w-4xl w-full bg-transparent relative">
+    <button onclick="closeModal()" class="absolute -top-10 right-0 text-white hover:text-orange-500 transition-colors text-xl font-bold flex items-center gap-2">
       Kapat ✕
     </button>
-
-    <img id="modalImage" src="" class="w-full rounded-lg" />
+    <img id="modalImage" src="" class="w-full rounded-lg object-contain max-h-[85vh] shadow-2xl" />
   </div>
 </div>
 
 <script>
-  function openModal(image) {
-    document.getElementById("modalImage").src = "src/img/certificates/" + image;
+  function openModal(imageName) {
+    document.getElementById("modalImage").src = "src/img/certificates/" + imageName;
     document.getElementById("certificateModal").classList.remove("hidden");
   }
-
   function closeModal() {
     document.getElementById("certificateModal").classList.add("hidden");
   }
-
+  document.getElementById("certificateModal").addEventListener("click", function(e) {
+    if (e.target === this) closeModal();
+  });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeModal();
   });
 </script>
 
-<!-- ===== SLIDER BAŞLANGIÇ ===== -->
-<div class="overflow-x-auto whitespace-nowrap py-6 flex gap-4 snap-x snap-mandatory">
+<section class="max-w-6xl mx-auto px-4 py-12 pb-24">
+    
+    <div class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-900 mb-6 border-l-4 border-orange-500 pl-4">Uygulayıcı Sertifikaları & Testler</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div onclick="openModal('cert_5.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_5.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">DIR Floortime®️ 101 & 201</h3>
+                            <p class="text-xs text-gray-500">ICDL (2021 - 2025)</p>
+                        </div>
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded">ULUSLARARASI</span>
+                    </div>
+                </div>
+            </div>
 
-  <!-- 1 -->
-  <div onclick="openModal('cert_1.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_1.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Akıcılık Bozuklukları Günü</h3><p class="text-xs text-slate-500">Medipol Üniversitesi</p></div>
+            <div onclick="openModal('cert_18.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_18.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                     <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">TEDİL Uygulayıcısı</h3>
+                     <p class="text-xs text-gray-500">Türkçe Erken Dil Gelişim Testi (2025)</p>
+                </div>
+            </div>
+
+            <div onclick="openModal('cert_14.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_14.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Aprakside Pediatrik Terapi</h3>
+                    <p class="text-xs text-gray-500">KOGE (2025)</p>
+                </div>
+            </div>
+
+             <div onclick="openModal('cert_16.JPG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_16.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Otizmde Dil ve İletişim</h3>
+                    <p class="text-xs text-gray-500">Müdahale Yöntemleri (2023)</p>
+                </div>
+            </div>
+
+             <div onclick="openModal('cert_15.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_15.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">İşitme Yetersizliği</h3>
+                    <p class="text-xs text-gray-500">Sesime Gel Eğitimi (2023)</p>
+                </div>
+            </div>
+
+            <div onclick="openModal('cert_17.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_17.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Oral Motor Terapi</h3>
+                    <p class="text-xs text-gray-500">Otizm ve Down Sendromu (2025)</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mt-16">
+        <h2 class="text-2xl font-bold text-emerald-900 mb-6 border-l-4 border-orange-500 pl-4">Kongre, Seminer ve Kurslar</h2>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-8">
+            <ul class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 11. Ulusal Dil ve Konuşma Bozuklukları Kongresi (2023)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Okulçağı Çocuklarında Kekemeliğin Yönetimi (2023)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Afazide Değerlendirme ve Terapi (2023)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Değerlendirmeden Terapiye Disfaji (2023)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Çocukluk Çağı Dil Bozuklukları (2023)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Konuşma Sesi Bozuklukları (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Benign Vokal Kord Patolojilerinde Ses Terapisi (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Çocukluk Çağı Motor Konuşma Bozuklukları (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Edinilmiş Dil Bozuklukları (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> DKT Perspektifinden Disleksi (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 1. Uluslararası Vaka Analizi Sempozyumu (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 2. Ulusal Akıcılık Bozuklukları Günü (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Voice İstanbul (2022)</li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> İstanbul DKT Zirvesi (2022-2023)</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<footer class="bg-emerald-900 text-white py-10 text-center">
+  <div class="max-w-6xl mx-auto px-4">
+      <p class="font-semibold text-lg mb-2">DKT Elanur Damla Yılmaz</p>
+      <p class="text-sm text-white/60">© 2025 Dil ve Konuşma Terapisi Kliniği. Tüm hakları saklıdır.</p>
   </div>
+</footer>
 
-  <!-- 2 -->
-  <div onclick="openModal('src/img/certificates/cert_2.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_2.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Vaka Okulu Semineri</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 3 -->
-  <div onclick="openModal('src/img/certificates/cert_3.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_3.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Voice Istanbul 2022</h3><p class="text-xs text-slate-500">İTÜ Konferansı</p></div>
-  </div>
-
-  <!-- 4 -->
-  <div onclick="openModal('src/img/certificates/cert_4.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_4.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">1. Uluslararası Vaka Analizi Sempozyumu</h3><p class="text-xs text-slate-500">Bahçeşehir Üniversitesi</p></div>
-  </div>
-
-  <!-- 5 -->
-  <div onclick="openModal('src/img/certificates/cert_5.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_5.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">DIR 101 – DIRFloortime</h3><p class="text-xs text-slate-500">ICDL</p></div>
-  </div>
-
-  <!-- 6 -->
-  <div onclick="openModal('src/img/certificates/cert_6.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_6.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve Konuşma Terapisi Zirvesi</h3><p class="text-xs text-slate-500">FSMVÜ SEM</p></div>
-  </div>
-
-  <!-- 7 -->
-  <div onclick="openModal('src/img/certificates/cert_7.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_7.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Disleksi Perspektifi Oturumu</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 8 -->
-  <div onclick="openModal('src/img/certificates/cert_8.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_8.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Benign Vokal Kord Patolojileri</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 9 -->
-  <div onclick="openModal('src/img/certificates/cert_9.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_9.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Motor Konuşma Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 10 -->
-  <div onclick="openModal('src/img/certificates/cert_10.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_10.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Edinilmiş Dil Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 11 -->
-  <div onclick="openModal('src/img/certificates/cert_11.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_11.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Konuşma Sesi Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 12 (JPG) -->
-  <div onclick="openModal('src/img/certificates/cert_12.JPG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_12.JPG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve Konuşma Terapisi Zirvesi</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 13 -->
-  <div onclick="openModal('src/img/certificates/cert_13.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_13.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Kekemelikte Güncel Yaklaşımlar</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 14 -->
-  <div onclick="openModal('src/img/certificates/cert_14.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_14.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Therapy Methods – Apraxia</h3><p class="text-xs text-slate-500">KOGE Organization</p></div>
-  </div>
-
-  <!-- 15 -->
-  <div onclick="openModal('src/img/certificates/cert_15.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_15.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve İletişim Müdahaleleri</h3><p class="text-xs text-slate-500">MorFEM</p></div>
-  </div>
-
-  <!-- 16 (JPG) -->
-  <div onclick="openModal('src/img/certificates/cert_16.JPG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_16.JPG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Otizmde Dil ve İletişim</h3><p class="text-xs text-slate-500">DYK</p></div>
-  </div>
-
-  <!-- 17 -->
-  <div onclick="openModal('src/img/certificates/cert_17.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_17.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Autism and Down Syndrome</h3><p class="text-xs text-slate-500">KOGE</p></div>
-  </div>
-
-  <!-- 18 -->
-  <div onclick="openModal('src/img/certificates/cert_18.PNG')" class="min-w-[250px] snap-center bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_18.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">TEDİL Uygulayıcı Eğitimi</h3><p class="text-xs text-slate-500">Detay Yayıncılık</p></div>
-  </div>
-
-</div>
-<!-- ===== SLIDER BİTİŞ ===== -->
-
-<!-- GRID -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10"> 
-  <!-- 1 -->
-  <div onclick="openModal('src/img/certificates/cert_1.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_1.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Akıcılık Bozuklukları Günü</h3><p class="text-xs text-slate-500">Medipol Üniversitesi</p></div>
-  </div>
-
-  <!-- 2 -->
-  <div onclick="openModal('src/img/certificates/cert_2.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_2.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Vaka Okulu Semineri</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 3 -->
-  <div onclick="openModal('src/img/certificates/cert_3.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_3.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Voice Istanbul 2022</h3><p class="text-xs text-slate-500">İTÜ Konferansı</p></div>
-  </div>
-
-  <!-- 4 -->
-  <div onclick="openModal('src/img/certificates/cert_4.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_4.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">1. Uluslararası Vaka Analizi Sempozyumu</h3><p class="text-xs text-slate-500">Bahçeşehir Üniversitesi</p></div>
-  </div>
-
-  <!-- 5 -->
-  <div onclick="openModal('src/img/certificates/cert_5.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_5.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">DIR 101 – DIRFloortime</h3><p class="text-xs text-slate-500">ICDL</p></div>
-  </div>
-
-  <!-- 6 -->
-  <div onclick="openModal('src/img/certificates/cert_6.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_6.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve Konuşma Terapisi Zirvesi</h3><p class="text-xs text-slate-500">FSMVÜ SEM</p></div>
-  </div>
-
-  <!-- 7 -->
-  <div onclick="openModal('src/img/certificates/cert_7.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_7.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Disleksi Perspektifi Oturumu</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 8 -->
-  <div onclick="openModal('src/img/certificates/cert_8.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_8.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Benign Vokal Kord Patolojileri</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 9 -->
-  <div onclick="openModal('src/img/certificates/cert_9.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_9.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Motor Konuşma Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 10 -->
-  <div onclick="openModal('src/img/certificates/cert_10.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_10.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Edinilmiş Dil Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 11 -->
-  <div onclick="openModal('src/img/certificates/cert_11.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_11.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Konuşma Sesi Bozuklukları</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 12 JPG -->
-  <div onclick="openModal('src/img/certificates/cert_12.JPG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_12.JPG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve Konuşma Terapisi Zirvesi</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 13 -->
-  <div onclick="openModal('src/img/certificates/cert_13.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_13.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Kekemelikte Güncel Yaklaşımlar</h3><p class="text-xs text-slate-500">Gençlik Durağı</p></div>
-  </div>
-
-  <!-- 14 -->
-  <div onclick="openModal('src/img/certificates/cert_14.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_14.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Therapy Methods – Apraxia</h3><p class="text-xs text-slate-500">KOGE Organization</p></div>
-  </div>
-
-  <!-- 15 -->
-  <div onclick="openModal('src/img/certificates/cert_15.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_15.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Dil ve İletişim Müdahaleleri</h3><p class="text-xs text-slate-500">MorFEM</p></div>
-  </div>
-
-  <!-- 16 JPG -->
-  <div onclick="openModal('src/img/certificates/cert_16.JPG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_16.JPG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Otizmde Dil ve İletişim</h3><p class="text-xs text-slate-500">DYK</p></div>
-  </div>
-
-  <!-- 17 -->
-  <div onclick="openModal('src/img/certificates/cert_17.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_17.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">Autism and Down Syndrome</h3><p class="text-xs text-slate-500">KOGE</p></div>
-  </div>
-
-  <!-- 18 -->
-  <div onclick="openModal('src/img/certificates/cert_18.PNG')" class="bg-white rounded-lg shadow cursor-pointer hover:scale-[1.03] transition">
-    <img src="src/img/certificates/cert_18.PNG" class="w-full h-40 object-cover rounded-t-lg" />
-    <div class="p-3"><h3 class="font-semibold text-slate-700 text-sm">TEDİL Uygulayıcı Eğitimi</h3><p class="text-xs text-slate-500">Detay Yayıncılık</p></div>
-  </div>
-</div>
-
-  <!-- FOOTER -->
-  <footer class="bg-sand py-6 text-center text-forest">
-    © 2025 Dil ve Konuşma Terapisi Kliniği
-  </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 
 </body>
 </html>
