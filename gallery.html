@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotoğraflar – Elanur Damla Yılmaz</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Lightbox Stil Kodları */
+        .lightbox {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-forest">
+
+    <!-- NAVBAR -->
+    <header class="py-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-forest">EDY Terapi</h1>
+
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-forest hover:text-terracotta transition font-medium">Ana Sayfa</a>
+                <a href="about.html" class="text-forest hover:text-terracotta transition font-medium">Hakkımda</a>
+                <a href="services.html" class="text-forest hover:text-terracotta transition font-medium">Hizmetler</a>
+                <a href="certificates.html" class="text-forest hover:text-terracotta transition font-medium">Sertifikalar</a>
+                <a href="gallery.html" class="text-forest hover:text-terracotta transition font-medium">Fotoğraflar</a>
+                <a href="contact.html" class="text-forest hover:text-terracotta transition font-medium">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BAŞLIK -->
+    <section class="py-16 text-center">
+        <h2 class="text-4xl font-bold text-forest mb-4">Kliniğimizden Kareler</h2>
+        <p class="text-lg text-forest/70 max-w-2xl mx-auto leading-relaxed">
+            Terapi odalarımız, kullanılan materyaller ve çalışma ortamımıza ait detaylı fotoğrafları keşfedin.
+        </p>
+    </section>
+
+    <!-- GALERİ GRID -->
+    <section class="pb-20">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Dış Mekan 1 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/dis_mekan.png')">
+                <img src="img/dis_mekan.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">Dış Mekan</p>
+                </div>
+            </div>
+
+            <!-- Bekleme Salonu -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/bekleme_salonu.png')">
+                <img src="img/bekleme_salonu.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">Bekleme Salonu</p>
+                </div>
+            </div>
+
+            <!-- İç Mekan 1 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/ic_mekan_1.png')">
+                <img src="img/ic_mekan_1.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">İç Mekan – Terapi Odası</p>
+                </div>
+            </div>
+
+            <!-- İç Mekan 2 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/ic_mekan_2.png')">
+                <img src="img/ic_mekan_2.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">İç Mekan – Materyaller</p>
+                </div>
+            </div>
+
+            <!-- İç Mekan 3 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/ic_mekan_3.png')">
+                <img src="img/ic_mekan_3.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">İç Mekan – Çerçeve Duvar</p>
+                </div>
+            </div>
+
+            <!-- İç Mekan 4 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/ic_mekan_4.png')">
+                <img src="img/ic_mekan_4.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">İç Mekan – Terapi Odası</p>
+                </div>
+            </div>
+
+            <!-- İç Mekan 5 -->
+            <div class="relative group cursor-pointer" onclick="openLightbox('img/ic_mekan_5.png')">
+                <img src="img/ic_mekan_5.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white text-lg font-medium">İç Mekan – Kitaplık & Materyaller</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById("lightbox-img").src = src;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest text-white py-10 text-center">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="font-semibold text-lg mb-2">DKT Elanur Damla Yılmaz</p>
+        <p class="text-sm text-white/60">© 2025 Dil ve Konuşma Terapisi Kliniği. Tüm hakları saklıdır.</p>
+          <div class="mt-6 text-center text-forest/70 text-sm leading-relaxed">
+            <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
+            <p>📞 0537 200 91 34</p>
+          </div>
+      </div>
+    </footer>
+</body>
+</html>
