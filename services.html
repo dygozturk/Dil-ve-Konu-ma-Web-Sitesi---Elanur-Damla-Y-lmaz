@@ -19,19 +19,65 @@
     <div class="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] bg-blue-50/40 rounded-full blur-[100px]"></div>
 </div>
 
-<nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+<!-- =============================== -->
+<!--            NAVBAR               -->
+<!-- =============================== -->
+<nav class="bg-cream/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="index.html" class="text-emerald-800 text-2xl font-bold tracking-tight">Giresun Dil ve Konuşma Terapist Kliniği | Elanur Damla YILMAZ</a>
-    <div class="hidden md:flex space-x-8 text-emerald-900 font-medium">
-      <a href="index.html" class="hover:text-orange-500 transition-colors">Ana Sayfa</a>
-      <a href="about.html" class="hover:text-orange-500 transition-colors">Hakkında</a>
-      <a href="certificates.html" class="text-forest hover:text-terracotta transition font-medium"> Sertifikalarım </a>
-      <a href="gallery.html" class="text-forest hover:text-terracotta transition font-medium">Fotoğraflar</a>
-      <a href="services.html" class="text-orange-500 font-semibold">Hizmetler</a>
-      <a href="contact.html" class="bg-emerald-800 text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors shadow-lg">İletişim</a>
+
+    <!-- Logo -->
+    <a href="index.html" class="flex flex-col leading-tight select-none">
+      <span class="text-forest text-xl md:text-2xl font-bold">Giresun Dil ve Konuşma</span>
+      <span class="text-terracotta text-sm md:text-base font-semibold -mt-1">Elanur Damla Yılmaz</span>
+    </a>
+
+    <!-- Masaüstü Menü -->
+    <div class="hidden md:flex items-center space-x-8 text-forest font-medium">
+      <a href="index.html" class="hover:text-terracotta transition-colors">Ana Sayfa</a>
+      <a href="about.html" class="hover:text-terracotta transition-colors">Hakkında</a>
+      <a href="certificates.html" class="hover:text-terracotta transition-colors">Sertifikalarım</a>
+      <a href="gallery.html" class="hover:text-terracotta transition-colors">Fotoğraflar</a>
+      <a href="services.html" class="hover:text-terracotta transition-colors">Hizmetler</a>
+      <a href="contact.html"
+         class="bg-forest text-white px-5 py-2 rounded-full hover:bg-terracotta transition-colors shadow-lg shadow-forest/20">
+         İletişim
+      </a>
     </div>
+
+    <!-- Mobil Menü Butonu -->
+    <button onclick="toggleMenu()" class="md:hidden text-forest text-3xl focus:outline-none">
+      ☰
+    </button>
   </div>
 </nav>
+
+<!-- Mobil Menü (Gizli) -->
+<div id="mobileMenu"
+     class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"
+     onclick="toggleMenu()">
+
+  <div class="bg-white w-3/4 h-full p-8 shadow-xl"
+       onclick="event.stopPropagation()">
+
+    <button onclick="toggleMenu()" class="text-2xl text-forest mb-6">✕</button>
+
+    <nav class="flex flex-col space-y-6 text-lg text-forest font-medium">
+      <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
+      <a href="about.html" class="hover:text-terracotta">Hakkında</a>
+      <a href="certificates.html" class="hover:text-terracotta">Sertifikalarım</a>
+      <a href="gallery.html" class="hover:text-terracotta">Fotoğraflar</a>
+      <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
+      <a href="contact.html" class="hover:text-terracotta">İletişim</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+</script>
 
 <section class="relative bg-white py-20 text-center" data-aos="fade-in">
     <div class="max-w-4xl mx-auto px-4">
