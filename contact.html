@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İletişim – Giresun Dil ve Konuşma Terapist Kliniği</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <title>İletişim – Giresun Dil ve Konuşma Terapist Kliniği</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/jpeg" href="src/img/logo.jpeg">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="src/img/logo.jpeg">
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    <!-- Tailwind -->
+    <link href="dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    /* Yıldızların rengi */
-    .star {
-      cursor: pointer;
-      font-size: 32px;
-      transition: color 0.2s ease;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    .star.selected {
-      color: #d35c4b;
-    }
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-    .star.unselected {
-      color: #d1d5db;
-    }
-  </style>
+    <!-- SAYFA ÖZEL EK CSS (YILDIZLAR) -->
+    <style>
+        .star {
+            cursor: pointer;
+            font-size: 32px;
+            transition: color 0.2s ease;
+        }
+        .star.selected {
+            color: #d35c4b;
+        }
+        .star.unselected {
+            color: #d1d5db;
+        }
+    </style>
 </head>
+
 
 <body class="bg-gradient-to-br from-green-50 via-[#fffdf5] to-orange-50 text-slate-800 overflow-x-hidden min-h-screen relative">
 
@@ -47,62 +50,61 @@
 <!-- =============================== -->
 <!--            NAVBAR               -->
 <!-- =============================== -->
+<!-- NAVBAR -->
 <nav class="bg-cream/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
 
-    <!-- Logo -->
-    <a href="index.html" class="flex flex-col leading-tight select-none">
-      <span class="text-forest text-xl md:text-2xl font-bold">Giresun Dil ve Konuşma</span>
-      <span class="text-terracotta text-sm md:text-base font-semibold -mt-1">Elanur Damla Yılmaz</span>
-    </a>
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col leading-tight select-none">
+            <span class="text-forest text-xl md:text-2xl font-bold">Giresun Dil ve Konuşma</span>
+            <span class="text-terracotta text-sm md:text-base font-semibold -mt-1">Elanur Damla Yılmaz</span>
+        </a>
 
-    <!-- Masaüstü Menü -->
-    <div class="hidden md:flex items-center space-x-8 text-forest font-medium">
-      <a href="index.html" class="hover:text-terracotta transition-colors">Ana Sayfa</a>
-      <a href="about.html" class="hover:text-terracotta transition-colors">Hakkımda</a>
-      <a href="certificates.html" class="hover:text-terracotta transition-colors">Sertifikalarım</a>
-      <a href="gallery.html" class="hover:text-terracotta transition-colors">Fotoğraflar</a>
-      <a href="services.html" class="hover:text-terracotta transition-colors">Hizmetler</a>
-      <a href="contact.html"
-         class="bg-forest text-white px-5 py-2 rounded-full hover:bg-terracotta transition-colors shadow-lg shadow-forest/20">
-         İletişim
-      </a>
+        <!-- Desktop Menü -->
+        <div class="hidden md:flex items-center space-x-8 text-forest font-medium">
+            <a href="index.html" class="hover:text-terracotta transition-colors">Ana Sayfa</a>
+            <a href="about.html" class="hover:text-terracotta transition-colors">Hakkımda</a>
+            <a href="certificates.html" class="hover:text-terracotta transition-colors">Sertifikalarım</a>
+            <a href="gallery.html" class="hover:text-terracotta transition-colors">Fotoğraflar</a>
+            <a href="services.html" class="hover:text-terracotta transition-colors">Hizmetler</a>
+
+            <!-- İletişim Butonu (Sorunun olduğu yer burasıydı) -->
+            <a href="contact.html"
+                class="bg-forest text-white px-5 py-2 rounded-full hover:bg-terracotta transition-colors shadow-lg shadow-forest/20">
+                İletişim
+            </a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button onclick="toggleMenu()" class="md:hidden text-forest text-3xl focus:outline-none">☰</button>
     </div>
-
-    <!-- Mobil Menü Butonu -->
-    <button onclick="toggleMenu()" class="md:hidden text-forest text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
 </nav>
 
-<!-- Mobil Menü (Gizli) -->
+<!-- Mobile Menu -->
 <div id="mobileMenu"
-     class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"
-     onclick="toggleMenu()">
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"
+    onclick="toggleMenu()">
 
-  <div class="bg-white w-3/4 h-full p-8 shadow-xl"
-       onclick="event.stopPropagation()">
+    <div class="bg-white w-3/4 h-full p-8 shadow-xl" onclick="event.stopPropagation()">
+        <button onclick="toggleMenu()" class="text-2xl text-forest mb-6">✕</button>
 
-    <button onclick="toggleMenu()" class="text-2xl text-forest mb-6">✕</button>
-
-    <nav class="flex flex-col space-y-6 text-lg text-forest font-medium">
-      <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
-      <a href="about.html" class="hover:text-terracotta">Hakkında</a>
-      <a href="certificates.html" class="hover:text-terracotta">Sertifikalarım</a>
-      <a href="gallery.html" class="hover:text-terracotta">Fotoğraflar</a>
-      <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
-      <a href="contact.html" class="hover:text-terracotta">İletişim</a>
-    </nav>
-  </div>
+        <nav class="flex flex-col space-y-6 text-lg text-forest font-medium">
+            <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
+            <a href="about.html" class="hover:text-terracotta">Hakkımda</a>
+            <a href="certificates.html" class="hover:text-terracotta">Sertifikalarım</a>
+            <a href="gallery.html" class="hover:text-terracotta">Fotoğraflar</a>
+            <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
+            <a href="contact.html" class="hover:text-terracotta">İletişim</a>
+        </nav>
+    </div>
 </div>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("hidden");
-}
+    function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    }
 </script>
+
 
 <!-- BAŞLIK -->
 <section class="pt-20 pb-12 text-center" data-aos="fade-in">
