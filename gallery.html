@@ -5,210 +5,235 @@
 -->
   
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotoğraflar – Elanur Damla Yılmaz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri – Giresun DKT Elanur Damla YILMAZ</title>
     <link rel="icon" type="image/jpeg" href="src/img/logo.jpeg">
 
-    <!-- Tailwind -->
-    <link href="dist/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-    <!-- Lightbox CSS -->
-    <style>
-        .lightbox {
-            position: fixed;
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-    </style>
-</head>
-
-<body class="relative bg-gradient-to-b from-cream via-white to-sand text-forest">
-<!-- =============================== -->
-<!--            NAVBAR               -->
-<!-- =============================== -->
-<nav class="bg-cream/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-
-        <!-- Logo -->
-        <a href="index.html" class="flex flex-col leading-tight select-none">
-            <span class="text-forest text-xl md:text-2xl font-bold">Giresun Dil ve Konuşma</span>
-            <span class="text-terracotta text-sm md:text-base font-semibold -mt-1">Elanur Damla Yılmaz</span>
-        </a>
-
-        <!-- Desktop Menü -->
-        <div class="hidden md:flex items-center space-x-8 text-forest font-medium">
-            <a href="index.html" class="hover:text-terracotta transition-colors">Ana Sayfa</a>
-            <a href="about.html" class="hover:text-terracotta transition-colors">Hakkımda</a>
-            <a href="certificates.html" class="hover:text-terracotta transition-colors">Sertifikalarım</a>
-            <a href="gallery.html" class="hover:text-terracotta transition-colors">Fotoğraflar</a>
-            <a href="services.html" class="hover:text-terracotta transition-colors">Hizmetler</a>
-
-            <!-- İletişim Butonu (Sorunun olduğu yer burasıydı) -->
-            <a href="contact.html"
-                class="bg-forest text-white px-5 py-2 rounded-full hover:bg-terracotta transition-colors shadow-lg shadow-forest/20">
-                İletişim
-            </a>
-        </div>
-
-        <!-- Mobile Button -->
-        <button onclick="toggleMenu()" class="md:hidden text-forest text-3xl focus:outline-none">☰</button>
-    </div>
-</nav>
-
-<!-- Mobile Menu -->
-<div id="mobileMenu"
-    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"
-    onclick="toggleMenu()">
-
-    <div class="bg-white w-3/4 h-full p-8 shadow-xl" onclick="event.stopPropagation()">
-        <button onclick="toggleMenu()" class="text-2xl text-forest mb-6">✕</button>
-
-        <nav class="flex flex-col space-y-6 text-lg text-forest font-medium">
-            <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
-            <a href="about.html" class="hover:text-terracotta">Hakkımda</a>
-            <a href="certificates.html" class="hover:text-terracotta">Sertifikalarım</a>
-            <a href="gallery.html" class="hover:text-terracotta">Fotoğraflar</a>
-            <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
-            <a href="contact.html" class="hover:text-terracotta">İletişim</a>
-        </nav>
-    </div>
-</div>
-
-<script>
-    function toggleMenu() {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
-    }
-</script>
-
-
-
-    <!-- BAŞLIK -->
-    <section class="py-16 text-center">
-        <h2 class="text-4xl font-bold text-forest mb-4">Kliniğimizden Kareler</h2>
-        <p class="text-lg text-forest/70 max-w-2xl mx-auto leading-relaxed">
-            Terapi odalarımız, kullanılan materyaller ve çalışma ortamımıza ait detaylı fotoğrafları keşfedin.
-        </p>
-    </section>
-
-    <!-- GALERİ GRID -->
-    <section class="pb-20">
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-            <!-- Dış Mekan 1 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('img/dis_mekan.png')">
-                <img src="src/img/dis_mekan_2.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">Dış Mekan</p>
-                </div>
-            </div>
-
-            <!-- Bekleme Salonu -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('img/bekleme_salonu.png')">
-                <img src="src/img/bekleme_salonu.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">Bekleme Salonu</p>
-                </div>
-            </div>
-
-            <!-- İç Mekan 1 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('src/img/ic_mekan_1.png')">
-                <img src="src/img/ic_mekan_1.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">İç Mekan – Terapi Odası</p>
-                </div>
-            </div>
-
-            <!-- İç Mekan 2 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('src/img/ic_mekan_2.png')">
-                <img src="src/img/ic_mekan_2.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">İç Mekan – Materyaller</p>
-                </div>
-            </div>
-
-            <!-- İç Mekan 3 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('src/img/ic_mekan_3.png')">
-                <img src="src/img/ic_mekan_3.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">İç Mekan – Çerçeve Duvar</p>
-                </div>
-            </div>
-
-            <!-- İç Mekan 4 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('src/img/ic_mekan_4.png')">
-                <img src="src/img/ic_mekan_4.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">İç Mekan – Terapi Odası</p>
-                </div>
-            </div>
-
-            <!-- İç Mekan 5 -->
-            <div class="relative group cursor-pointer" onclick="openLightbox('src/img/ic_mekan_5.png')">
-                <img src="src/img/ic_mekan_5.png" class="w-full h-64 object-cover rounded-2xl shadow-md">
-                <div class="absolute inset-0 bg-black/50 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="text-white text-lg font-medium">İç Mekan – Kitaplık & Materyaller</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="">
-    </div>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script>
-        function openLightbox(src) {
-            document.getElementById("lightbox-img").src = src;
-            document.getElementById("lightbox").style.display = "flex";
-        }
-
-        function closeLightbox() {
-            document.getElementById("lightbox").style.display = "none";
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#2d6a4f',    /* Orman Yeşili */
+                            lightGreen: '#d8f3dc', /* Açık Yeşil */
+                            orange: '#e07a5f',   /* Kiremit/Terracotta */
+                            cream: '#fdfbf7',    /* Krem Zemin */
+                            dark: '#1b4332',     /* Koyu Metin */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
         }
     </script>
 
-    <!-- FOOTER -->
-    <footer class="bg-forest text-white py-10 text-center">
-      <div class="max-w-6xl mx-auto px-4">
-        <p class="font-semibold text-lg mb-2">DKT Elanur Damla Yılmaz</p>
-        <p class="text-sm text-white/60">© 2025 Dil ve Konuşma Terapisi Kliniği. Tüm hakları saklıdır.</p>
-        <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
-        <p>📞 0537 200 91 34</p>
-        <p class="text-xs text-white/40 mt-4">Web sitesi tasarım ve geliştirme: <span class="font-semibold">Duygu ÖZTÜRK</span></p>
-      </div>
+    <style>
+        /* WhatsApp Nabız */
+        .pulse-green { animation: pulse-green-anim 2s infinite; }
+        @keyframes pulse-green-anim {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+        
+        /* Lightbox Geçiş */
+        #lightbox { transition: opacity 0.3s ease; }
+    </style>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark overflow-x-hidden relative selection:bg-brand-orange selection:text-white">
+
+    <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-lightGreen rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob"></div>
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-20 w-[400px] h-[400px] bg-yellow-50 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm border-b border-white/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex flex-col leading-tight group">
+                    <span class="text-brand-green text-xl md:text-2xl font-display font-bold tracking-tight group-hover:text-brand-orange transition-colors">Giresun Dil ve Konuşma Terapisti</span>
+                    <span class="text-brand-orange text-xs md:text-sm font-bold tracking-widest uppercase">Elanur Damla Yılmaz</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-brand-orange transition-colors">Ana Sayfa</a>
+                    <a href="about.html" class="hover:text-brand-orange transition-colors">Hakkımda</a>
+                    <a href="services.html" class="hover:text-brand-orange transition-colors">Hizmetler</a>
+                    <a href="certificates.html" class="hover:text-brand-orange transition-colors">Sertifikalar</a>
+                    <a href="gallery.html" class="text-brand-green">Galeri</a>
+                    <a href="contact.html" class="bg-brand-green text-white px-6 py-2.5 rounded-full hover:bg-brand-orange transition-all shadow-lg hover:shadow-orange-200 transform hover:-translate-y-0.5">
+                        İletişim
+                    </a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-brand-green p-2 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden mt-4 bg-white/95 backdrop-blur-xl border border-white rounded-2xl shadow-xl absolute left-4 right-4 top-full overflow-hidden">
+                <nav class="flex flex-col p-6 space-y-4 text-center font-display font-bold text-slate-700">
+                    <a href="index.html" class="hover:text-brand-orange">Ana Sayfa</a>
+                    <a href="about.html" class="hover:text-brand-orange">Hakkımda</a>
+                    <a href="services.html" class="hover:text-brand-orange">Hizmetler</a>
+                    <a href="certificates.html" class="hover:text-brand-orange">Sertifikalar</a>
+                    <a href="gallery.html" class="text-brand-green bg-green-50 py-2 rounded-lg">Galeri</a>
+                    <a href="contact.html" class="text-white bg-brand-orange py-3 rounded-xl shadow-md">İletişim</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-16 text-center" data-aos="fade-in">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span class="text-brand-orange font-bold tracking-widest text-xs uppercase mb-3 block animate-pulse">GALERİ</span>
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-4">Kliniğimizden Kareler</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                Terapi odalarımız, kullanılan materyaller ve çalışma ortamımıza ait detaylı fotoğrafları keşfedin.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="relative group cursor-pointer lg:col-span-2 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/dis_mekan_2.png')" data-aos="fade-up">
+                <img src="src/img/dis_mekan_2.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Dış Mekan">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Klinik Girişi & Dış Mekan</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer h-64 sm:h-80 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/bekleme_salonu.png')" data-aos="fade-up" data-aos-delay="100">
+                <img src="src/img/bekleme_salonu.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Bekleme Salonu">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Bekleme Salonu</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer h-64 sm:h-72 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/ic_mekan_1.png')" data-aos="fade-up">
+                <img src="src/img/ic_mekan_1.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Terapi Odası">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Terapi Odası</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer h-64 sm:h-72 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/ic_mekan_2.png')" data-aos="fade-up" data-aos-delay="100">
+                <img src="src/img/ic_mekan_2.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Materyaller">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Terapi Materyalleri</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer h-64 sm:h-72 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/ic_mekan_3.png')" data-aos="fade-up" data-aos-delay="200">
+                <img src="src/img/ic_mekan_3.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Detaylar">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Ofis Detayları</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer lg:col-span-2 h-64 sm:h-72 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/ic_mekan_4.png')" data-aos="fade-up">
+                <img src="src/img/ic_mekan_4.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Oyun Alanı">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Oyun Terapisi Alanı</span>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer h-64 sm:h-72 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" onclick="openLightbox('src/img/ic_mekan_5.png')" data-aos="fade-up" data-aos-delay="100">
+                <img src="src/img/ic_mekan_5.png" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Kitaplık">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <span class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition duration-300">Kitaplık ve Oyuncaklar</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-brand-green text-white py-12 mt-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <h3 class="text-2xl font-display font-bold mb-2">DKT Elanur Damla Yılmaz</h3>
+            <p class="text-green-100 text-sm mb-6">Dil ve Konuşma Terapisi Kliniği</p>
+            
+            <div class="space-y-2 text-sm text-green-50">
+                <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
+                <p>📞 0537 200 91 34</p>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-white/10 text-xs text-green-200/60">
+                © 2025 Tüm hakları saklıdır. | Tasarım: Duygu ÖZTÜRK
+            </div>
+        </div>
     </footer>
 
-    <!-- Arka Plan Bokeh Baloncukları -->
-    <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
-    <div class="absolute -top-20 -left-20 w-80 h-80 bg-emerald-100 rounded-full blur-[100px] opacity-40"></div>
-    <div class="absolute top-1/3 -right-20 w-72 h-72 bg-orange-100 rounded-full blur-[110px] opacity-40"></div>
-    <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-rose-100 rounded-full blur-[120px] opacity-40"></div>
-</div>
+    <div id="lightbox" class="fixed inset-0 bg-black/95 hidden z-[1000] flex items-center justify-center p-4 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-brand-orange transition">×</button>
+        <img id="lightbox-img" src="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl transition-transform scale-95 duration-300">
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        // Mobil Menü
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('open'); });
+
+        // Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                img.classList.remove('scale-95');
+                img.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                img.src = '';
+            }, 300);
+        }
+    </script>
+
+    <a href="https://wa.me/905372009134?text=Merhaba%2C%20randevu%20bilgisi%20almak%20istiyorum." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl pulse-green hover:scale-110 transition z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-3.104-5.391-.704-12.32 4.692-15.423 5.398-3.104 12.321-.705 15.424 4.691 3.105 5.391.705 12.32-4.691 15.423-2.598 1.493-5.484 1.675-8.033.808l-9.079 1.509zm17.529-8.096c-.354-.177-2.095-1.033-2.419-1.151-.323-.118-.558-.177-.793.177-.235.354-.912 1.151-1.118 1.387-.206.235-.411.265-.765.088-2.232-1.114-3.675-2.021-5.14-4.539-.198-.341.21-.497.585-1.246.073-.148.036-.28-.019-.392-.054-.111-.477-1.169-.662-1.59-.179-.407-.368-.356-.504-.364-.128-.008-.274-.008-.42-.008-.146 0-.382.055-.582.273-.2.218-.765.748-.765 1.825 0 1.077.785 2.117.895 2.264.11.147 1.545 2.359 3.744 3.308 1.533.661 1.845.53 2.514.468.668-.062 2.095-.856 2.389-1.682.294-.826.294-1.534.206-1.682-.088-.147-.324-.221-.678-.398z"/></svg>
+    </a>
 
 </body>
 </html>
