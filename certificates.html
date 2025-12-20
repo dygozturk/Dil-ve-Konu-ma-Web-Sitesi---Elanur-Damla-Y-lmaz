@@ -5,274 +5,285 @@
 -->
   
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Giresun Dil ve Konuşma Terapisi – Elanur Damla Yılmaz</title>
-
-    <!-- Favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikalar – Giresun DKT Elanur Damla YILMAZ</title>
     <link rel="icon" type="image/jpeg" href="src/img/logo.jpeg">
 
-    <!-- Tailwind -->
-    <link href="dist/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#2d6a4f',    /* Orman Yeşili */
+                            lightGreen: '#d8f3dc', /* Açık Yeşil */
+                            orange: '#e07a5f',   /* Kiremit/Terracotta */
+                            cream: '#fdfbf7',    /* Krem Zemin */
+                            dark: '#1b4332',     /* Koyu Metin */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- AOS (Bazı sayfalarda olsa sorun olmuyor) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <style>
+        /* WhatsApp Nabız */
+        .pulse-green { animation: pulse-green-anim 2s infinite; }
+        @keyframes pulse-green-anim {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
 </head>
 
+<body class="bg-brand-cream font-sans text-brand-dark overflow-x-hidden relative selection:bg-brand-orange selection:text-white">
 
-<body class="bg-gradient-to-br from-green-50 via-[#fffdf5] to-orange-50 font-sans text-slate-800 overflow-x-hidden min-h-screen relative">
-  <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-    <div class="absolute -top-[10%] -left-[10%] w-[500px] h-[500px] bg-green-100/50 rounded-full blur-[100px]"></div>
-    <div class="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-orange-100/40 rounded-full blur-[100px]"></div>
-    <div class="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] bg-blue-50/40 rounded-full blur-[100px]"></div>
-</div>
+    <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-lightGreen rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob"></div>
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-20 w-[400px] h-[400px] bg-yellow-50 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob animation-delay-4000"></div>
+    </div>
 
-<!-- =============================== -->
-<!--            NAVBAR               -->
-<!-- =============================== -->
-<!-- NAVBAR -->
-<nav class="bg-cream/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm border-b border-white/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex flex-col leading-tight group">
+                    <span class="text-brand-green text-xl md:text-2xl font-display font-bold tracking-tight group-hover:text-brand-orange transition-colors">Giresun DKT</span>
+                    <span class="text-brand-orange text-xs md:text-sm font-bold tracking-widest uppercase">Elanur Damla Yılmaz</span>
+                </a>
 
-        <!-- Logo -->
-        <a href="index.html" class="flex flex-col leading-tight select-none">
-            <span class="text-forest text-xl md:text-2xl font-bold">Giresun Dil ve Konuşma</span>
-            <span class="text-terracotta text-sm md:text-base font-semibold -mt-1">Elanur Damla Yılmaz</span>
-        </a>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-brand-orange transition-colors">Ana Sayfa</a>
+                    <a href="about.html" class="hover:text-brand-orange transition-colors">Hakkımda</a>
+                    <a href="services.html" class="hover:text-brand-orange transition-colors">Hizmetler</a>
+                    <a href="certificates.html" class="text-brand-green">Sertifikalar</a>
+                    <a href="gallery.html" class="hover:text-brand-orange transition-colors">Galeri</a>
+                    <a href="contact.html" class="bg-brand-green text-white px-6 py-2.5 rounded-full hover:bg-brand-orange transition-all shadow-lg hover:shadow-orange-200 transform hover:-translate-y-0.5">
+                        İletişim
+                    </a>
+                </div>
 
-        <!-- Desktop Menü -->
-        <div class="hidden md:flex items-center space-x-8 text-forest font-medium">
-            <a href="index.html" class="hover:text-terracotta transition-colors">Ana Sayfa</a>
-            <a href="about.html" class="hover:text-terracotta transition-colors">Hakkımda</a>
-            <a href="certificates.html" class="hover:text-terracotta transition-colors">Sertifikalarım</a>
-            <a href="gallery.html" class="hover:text-terracotta transition-colors">Fotoğraflar</a>
-            <a href="services.html" class="hover:text-terracotta transition-colors">Hizmetler</a>
+                <button id="menu-btn" class="md:hidden text-brand-green p-2 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
 
-            <!-- İletişim Butonu (Sorunun olduğu yer burasıydı) -->
-            <a href="contact.html"
-                class="bg-forest text-white px-5 py-2 rounded-full hover:bg-terracotta transition-colors shadow-lg shadow-forest/20">
-                İletişim
-            </a>
+            <div id="mobile-menu" class="md:hidden mt-4 bg-white/95 backdrop-blur-xl border border-white rounded-2xl shadow-xl absolute left-4 right-4 top-full overflow-hidden">
+                <nav class="flex flex-col p-6 space-y-4 text-center font-display font-bold text-slate-700">
+                    <a href="index.html" class="hover:text-brand-orange">Ana Sayfa</a>
+                    <a href="about.html" class="hover:text-brand-orange">Hakkımda</a>
+                    <a href="services.html" class="hover:text-brand-orange">Hizmetler</a>
+                    <a href="certificates.html" class="text-brand-green bg-green-50 py-2 rounded-lg">Sertifikalar</a>
+                    <a href="gallery.html" class="hover:text-brand-orange">Galeri</a>
+                    <a href="contact.html" class="text-white bg-brand-orange py-3 rounded-xl shadow-md">İletişim</a>
+                </nav>
+            </div>
         </div>
+    </nav>
 
-        <!-- Mobile Button -->
-        <button onclick="toggleMenu()" class="md:hidden text-forest text-3xl focus:outline-none">☰</button>
-    </div>
-</nav>
+    <section class="relative pt-32 pb-16 text-center" data-aos="fade-in">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span class="text-brand-orange font-bold tracking-widest text-xs uppercase mb-3 block animate-pulse">MESLEKİ GELİŞİM</span>
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-4">Eğitim ve Sertifikalar</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                Güncel literatürü takip etmek ve danışanlarıma en etkili yöntemleri sunmak için katıldığım sertifikalı eğitim programları ve kongreler.
+            </p>
+        </div>
+    </section>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu"
-    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"
-    onclick="toggleMenu()">
-
-    <div class="bg-white w-3/4 h-full p-8 shadow-xl" onclick="event.stopPropagation()">
-        <button onclick="toggleMenu()" class="text-2xl text-forest mb-6">✕</button>
-
-        <nav class="flex flex-col space-y-6 text-lg text-forest font-medium">
-            <a href="index.html" class="hover:text-terracotta">Ana Sayfa</a>
-            <a href="about.html" class="hover:text-terracotta">Hakkımda</a>
-            <a href="certificates.html" class="hover:text-terracotta">Sertifikalarım</a>
-            <a href="gallery.html" class="hover:text-terracotta">Fotoğraflar</a>
-            <a href="services.html" class="hover:text-terracotta">Hizmetler</a>
-            <a href="contact.html" class="hover:text-terracotta">İletişim</a>
-        </nav>
-    </div>
-</div>
-
-<script>
-    function toggleMenu() {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
-    }
-</script>
-
-<section class="relative bg-white py-16" data-aos="fade-in">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <span class="text-orange-500 font-bold tracking-widest uppercase text-xs mb-2 block">MESLEKİ GELİŞİM</span>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-6">Eğitim ve Sertifikalar</h1>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Güncel literatürü takip etmek ve danışanlarıma en etkili yöntemleri sunmak için katıldığım sertifikalı eğitim programları ve kongreler.
-        </p>
-    </div>
-</section>
-
-<div id="certificateModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm flex justify-center items-center hidden z-[999] p-4 transition-opacity duration-300">
-  <div class="max-w-4xl w-full bg-transparent relative">
-    <button onclick="closeModal()" class="absolute -top-10 right-0 text-white hover:text-orange-500 transition-colors text-xl font-bold flex items-center gap-2">
-      Kapat ✕
-    </button>
-    <img id="modalImage" src="" class="w-full rounded-lg object-contain max-h-[85vh] shadow-2xl" />
-  </div>
-</div>
-
-<script>
-  function openModal(imageName) {
-    document.getElementById("modalImage").src = "src/img/certificates/" + imageName;
-    document.getElementById("certificateModal").classList.remove("hidden");
-  }
-  function closeModal() {
-    document.getElementById("certificateModal").classList.add("hidden");
-  }
-  document.getElementById("certificateModal").addEventListener("click", function(e) {
-    if (e.target === this) closeModal();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeModal();
-  });
-</script>
-
-<section class="max-w-6xl mx-auto px-4 py-12 pb-24">
-    
-    <div class="mb-12">
-        <h2 class="text-2xl font-bold text-emerald-900 mb-6 border-l-4 border-orange-500 pl-4">Uygulayıcı Sertifikaları & Testler</h2>
+    <section class="max-w-7xl mx-auto px-6 py-12 pb-24 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div onclick="openModal('cert_5.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_5.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            <div onclick="openModal('cert_5.PNG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_5.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">DIR Floortime®️ 101 & 201</h3>
-                            <p class="text-xs text-gray-500">ICDL (2021 - 2025)</p>
+                            <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">DIR Floortime®️ 101 & 201</h3>
+                            <p class="text-xs text-slate-500 font-medium">ICDL (2021 - 2025)</p>
                         </div>
-                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded">ULUSLARARASI</span>
+                        <span class="bg-green-100 text-brand-green text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Uluslararası</span>
                     </div>
                 </div>
             </div>
 
-            <div onclick="openModal('cert_18.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                     <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_18.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            <div onclick="openModal('cert_18.PNG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_18.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-5">
-                     <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">TEDİL Uygulayıcısı</h3>
-                     <p class="text-xs text-gray-500">Türkçe Erken Dil Gelişim Testi (2025)</p>
-                </div>
-            </div>
-
-            <div onclick="openModal('cert_14.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_14.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Aprakside Pediatrik Terapi</h3>
-                    <p class="text-xs text-gray-500">KOGE (2025)</p>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">TEDİL Uygulayıcısı</h3>
+                    <p class="text-xs text-slate-500 font-medium">Türkçe Erken Dil Gelişim Testi (2025)</p>
                 </div>
             </div>
 
-             <div onclick="openModal('cert_16.JPG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_16.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            <div onclick="openModal('cert_14.PNG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_14.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Otizmde Dil ve İletişim</h3>
-                    <p class="text-xs text-gray-500">Müdahale Yöntemleri (2023)</p>
-                </div>
-            </div>
-
-             <div onclick="openModal('cert_15.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_15.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">İşitme Yetersizliği</h3>
-                    <p class="text-xs text-gray-500">Sesime Gel Eğitimi (2023)</p>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">Aprakside Pediatrik Terapi</h3>
+                    <p class="text-xs text-slate-500 font-medium">KOGE (2025)</p>
                 </div>
             </div>
 
-            <div onclick="openModal('cert_19.JPG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                     <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_19.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            <div onclick="openModal('cert_16.JPG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_16.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-5">
-                     <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">TODİL Uygulayıcısı</h3>
-                     <p class="text-xs text-gray-500">Türkçe Okul Çağı Dil Gelişim Testi (2022)</p>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">Otizmde Dil ve İletişim</h3>
+                    <p class="text-xs text-slate-500 font-medium">Müdahale Yöntemleri (2023)</p>
                 </div>
             </div>
 
-            <div onclick="openModal('cert_17.PNG')" class="group bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <img src="src/img/certificates/cert_17.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            <div onclick="openModal('cert_15.PNG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_15.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-emerald-900 text-lg mb-1 group-hover:text-orange-600 transition-colors">Oral Motor Terapi</h3>
-                    <p class="text-xs text-gray-500">Otizm ve Down Sendromu (2025)</p>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">İşitme Yetersizliği</h3>
+                    <p class="text-xs text-slate-500 font-medium">Sesime Gel Eğitimi (2023)</p>
+                </div>
+            </div>
+
+            <div onclick="openModal('cert_19.JPG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_19.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">TODİL Uygulayıcısı</h3>
+                    <p class="text-xs text-slate-500 font-medium">Türkçe Okul Çağı Dil Gelişim Testi (2022)</p>
+                </div>
+            </div>
+
+            <div onclick="openModal('cert_17.PNG')" class="group bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden" data-aos="fade-up">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-brand-green/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="src/img/certificates/cert_17.PNG" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-brand-dark text-lg mb-1 group-hover:text-brand-orange transition-colors font-display">Oral Motor Terapi</h3>
+                    <p class="text-xs text-slate-500 font-medium">Otizm ve Down Sendromu (2025)</p>
                 </div>
             </div>
 
         </div>
-    </div>
 
-    <div class="mt-16">
-        <h2 class="text-2xl font-bold text-emerald-900 mb-6 border-l-4 border-orange-500 pl-4">Kongre, Seminer ve Kurslar</h2>
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-8">
-            <ul class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 11. Ulusal Dil ve Konuşma Bozuklukları Kongresi (2023)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Okulçağı Çocuklarında Kekemeliğin Yönetimi (2023)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Afazide Değerlendirme ve Terapi (2023)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Değerlendirmeden Terapiye Disfaji (2023)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Çocukluk Çağı Dil Bozuklukları (2023)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Konuşma Sesi Bozuklukları (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Benign Vokal Kord Patolojilerinde Ses Terapisi (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Çocukluk Çağı Motor Konuşma Bozuklukları (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Edinilmiş Dil Bozuklukları (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> DKT Perspektifinden Disleksi (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 1. Uluslararası Vaka Analizi Sempozyumu (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> 2. Ulusal Akıcılık Bozuklukları Günü (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> Voice İstanbul (2022)</li>
-                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">▹</span> İstanbul DKT Zirvesi (2022-2023)</li>
+        <div class="mt-20 bg-white rounded-3xl p-10 border border-brand-green/10 shadow-sm relative overflow-hidden" data-aos="fade-up">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-bl-full"></div>
+            
+            <h2 class="text-2xl font-display font-bold text-brand-dark mb-8 flex items-center gap-3 relative z-10">
+                <span class="w-8 h-8 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-sm">🎓</span>
+                Kongre, Seminer ve Kurslar
+            </h2>
+            
+            <ul class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-600 relative z-10">
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> 11. Ulusal Dil ve Konuşma Bozuklukları Kongresi (2023)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Okulçağı Çocuklarında Kekemeliğin Yönetimi (2023)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Afazide Değerlendirme ve Terapi (2023)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Değerlendirmeden Terapiye Disfaji (2023)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Çocukluk Çağı Dil Bozuklukları (2023)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Konuşma Sesi Bozuklukları (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Benign Vokal Kord Patolojilerinde Ses Terapisi (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Çocukluk Çağı Motor Konuşma Bozuklukları (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Edinilmiş Dil Bozuklukları (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> DKT Perspektifinden Disleksi (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> 1. Uluslararası Vaka Analizi Sempozyumu (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> 2. Ulusal Akıcılık Bozuklukları Günü (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> Voice İstanbul (2022)</li>
+                <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">▹</span> İstanbul DKT Zirvesi (2022-2023)</li>
             </ul>
         </div>
+    </section>
+
+    <footer class="bg-brand-green text-white py-12 mt-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <h3 class="text-2xl font-display font-bold mb-2">DKT Elanur Damla Yılmaz</h3>
+            <p class="text-green-100 text-sm mb-6">Dil ve Konuşma Terapisi Kliniği</p>
+            
+            <div class="space-y-2 text-sm text-green-50">
+                <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
+                <p>📞 0537 200 91 34</p>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-white/10 text-xs text-green-200/60">
+                © 2025 Tüm hakları saklıdır. | Tasarım: Duygu ÖZTÜRK
+            </div>
+        </div>
+    </footer>
+
+    <div id="certificateModal" class="fixed inset-0 bg-black/95 hidden z-[1000] flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-brand-orange transition">×</button>
+        <img id="modalImage" src="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl transition-transform scale-95 duration-300">
     </div>
 
-</section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
 
-<footer class="bg-emerald-900 text-white py-10 text-center">
-  <div class="max-w-6xl mx-auto px-4">
-      <p class="font-semibold text-lg mb-2">DKT Elanur Damla Yılmaz</p>
-      <p class="text-sm text-white/60">© 2025 Dil ve Konuşma Terapisi Kliniği. Tüm hakları saklıdır.</p>
-      <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
-      <p>📞 0537 200 91 34</p>
-      <p class="text-xs text-white/40 mt-4">Web sitesi tasarım ve geliştirme: <span class="font-semibold">Duygu ÖZTÜRK</span></p>
-  </div>
-</footer>
+        // Mobil Menü
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('open'); });
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
+        // Lightbox
+        function openModal(imageName) {
+            document.getElementById("modalImage").src = "src/img/certificates/" + imageName;
+            const modal = document.getElementById("certificateModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                document.getElementById("modalImage").classList.remove("scale-95");
+                document.getElementById("modalImage").classList.add("scale-100");
+            }, 10);
+        }
+        function closeModal() {
+            const modal = document.getElementById("certificateModal");
+            document.getElementById("modalImage").classList.remove("scale-100");
+            document.getElementById("modalImage").classList.add("scale-95");
+            setTimeout(() => modal.classList.add("hidden"), 200);
+        }
+    </script>
 
-<!-- =============================== -->
-<!--      Hızlı Randevu Butonu       -->
-<!-- =============================== -->
-<a href="https://wa.me/905372009134?text=Merhaba%2C%20DKT%20Klinik%20web%20sitenizden%20ula%C5%9F%C4%B1yorum%2C%20randevu%20bilgisi%20alabilir%20miyim%3F" 
-   target="_blank" 
-   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:-translate-y-1 transition-all duration-300 z-50 flex items-center gap-2 group"
-   title="WhatsApp ile Randevu Al">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-3.104-5.391-.704-12.32 4.692-15.423 5.398-3.104 12.321-.705 15.424 4.691 3.105 5.391.705 12.32-4.691 15.423-2.598 1.493-5.484 1.675-8.033.808l-9.079 1.509zm17.529-8.096c-.354-.177-2.095-1.033-2.419-1.151-.323-.118-.558-.177-.793.177-.235.354-.912 1.151-1.118 1.387-.206.235-.411.265-.765.088-2.232-1.114-3.675-2.021-5.14-4.539-.198-.341.21-.497.585-1.246.073-.148.036-.28-.019-.392-.054-.111-.477-1.169-.662-1.59-.179-.407-.368-.356-.504-.364-.128-.008-.274-.008-.42-.008-.146 0-.382.055-.582.273-.2.218-.765.748-.765 1.825 0 1.077.785 2.117.895 2.264.11.147 1.545 2.359 3.744 3.308 1.533.661 1.845.53 2.514.468.668-.062 2.095-.856 2.389-1.682.294-.826.294-1.534.206-1.682-.088-.147-.324-.221-.678-.398z"/>
-    </svg>
-    
-    <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
-        Hızlı Randevu
-    </span>
-</a>
+    <a href="https://wa.me/905372009134?text=Merhaba%2C%20randevu%20bilgisi%20almak%20istiyorum." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl pulse-green hover:scale-110 transition z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-3.104-5.391-.704-12.32 4.692-15.423 5.398-3.104 12.321-.705 15.424 4.691 3.105 5.391.705 12.32-4.691 15.423-2.598 1.493-5.484 1.675-8.033.808l-9.079 1.509zm17.529-8.096c-.354-.177-2.095-1.033-2.419-1.151-.323-.118-.558-.177-.793.177-.235.354-.912 1.151-1.118 1.387-.206.235-.411.265-.765.088-2.232-1.114-3.675-2.021-5.14-4.539-.198-.341.21-.497.585-1.246.073-.148.036-.28-.019-.392-.054-.111-.477-1.169-.662-1.59-.179-.407-.368-.356-.504-.364-.128-.008-.274-.008-.42-.008-.146 0-.382.055-.582.273-.2.218-.765.748-.765 1.825 0 1.077.785 2.117.895 2.264.11.147 1.545 2.359 3.744 3.308 1.533.661 1.845.53 2.514.468.668-.062 2.095-.856 2.389-1.682.294-.826.294-1.534.206-1.682-.088-.147-.324-.221-.678-.398z"/></svg>
+    </a>
 
 </body>
 </html>
