@@ -330,6 +330,7 @@
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => { menu.classList.toggle('open'); });
 
+<<<<<<< HEAD
         // Galeri
         function openGalleryModal(src) {
             const modal = document.getElementById('galleryModal');
@@ -344,5 +345,132 @@
             modal.classList.add('hidden');
         }
     </script>
+=======
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div onclick="openGalleryModal('src/img/dis_mekan.png')" class="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer h-64" data-aos="fade-up" data-aos-delay="0">
+                <img src="src/img/dis_mekan_2.png" alt="Klinik Dış Görünüm" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span class="text-white font-semibold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        Büyütmek için tıkla
+                    </span>
+                </div>
+            </div>
+
+             <div onclick="openGalleryModal('src/img/ic_mekan_1.png')" class="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer h-64" data-aos="fade-up" data-aos-delay="100">
+                <img src="src/img/ic_mekan_1.png" alt="Terapi Odası" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                 <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span class="text-white font-semibold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        Büyütmek için tıkla
+                    </span>
+                </div>
+            </div>
+
+             <div onclick="openGalleryModal('src/img/ic_mekan_2.png')" class="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer h-64" data-aos="fade-up" data-aos-delay="200">
+                <img src="src/img/ic_mekan_2.png" alt="Bekleme Alanı" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                 <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span class="text-white font-semibold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        Büyütmek için tıkla
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- =============================== -->
+<!--          GALLERY MODAL         -->
+<!-- =============================== -->
+
+<div id="galleryModal" 
+     class="fixed inset-0 bg-black/90 backdrop-blur-sm hidden z-[1000] flex items-center justify-center p-4"
+     onclick="closeGalleryModal()">
+
+    <!-- Modal İç Kutu -->
+    <div class="relative max-w-4xl w-full flex flex-col items-center"
+         onclick="event.stopPropagation()">
+
+        <!-- Kapatma Butonu -->
+        <button onclick="closeGalleryModal()" 
+                class="absolute top-4 right-4 bg-black/60 text-white p-2 rounded-full hover:bg-black transition">
+            ✕
+        </button>
+
+        <!-- Büyük Görsel -->
+        <img id="galleryImage"
+             src=""
+             class="max-h-[75vh] max-w-full rounded-xl shadow-2xl mb-6 object-contain" />
+
+        <!-- Fotoğraflar Sayfası Butonu -->
+        <a href="gallery.html"
+           class="bg-forest text-white px-6 py-3 rounded-full shadow-lg hover:bg-terracotta transition">
+           Fotoğraflara Git →
+        </a>
+
+    </div>
+</div>
+
+<script>
+  function openGalleryModal(imagePath) {
+    const modal = document.getElementById('galleryModal');
+    const img = document.getElementById('galleryImage');
+    img.src = imagePath;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Arka plan kaydırmayı engelle
+  }
+
+  function closeGalleryModal() {
+    const modal = document.getElementById('galleryModal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Kaydırmayı tekrar aç
+  }
+
+  // ESC tuşu ile kapatma
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeGalleryModal();
+  });
+</script>
+
+<!-- ==================================================== -->
+<!--                        FOOTER                        -->
+<!-- ==================================================== -->
+<footer class="bg-forest text-white py-10 text-center mt-10">
+  <div class="max-w-6xl mx-auto px-4">
+      <p class="font-semibold text-lg mb-2">DKT Elanur Damla Yılmaz</p>
+      <p class="text-sm text-white/60">© 2025 Dil ve Konuşma Terapisi Kliniği. Tüm hakları saklıdır.</p>
+      <p>📍 Çıtlakkale Mahallesi, 121 Nolu Sokak, No: 7A, Merkez / Giresun</p>
+      <p>📞 0537 200 91 34</p>
+      <p class="text-xs text-white/40 mt-4">Web sitesi tasarım ve geliştirme: <span class="font-semibold">Duygu ÖZTÜRK</span></p>
+  </div>
+</footer>
+
+
+<!-- AOS animasyon scripti -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,  // Animasyon süresi (milisaniye)
+    once: true,     // Animasyon her elemanda sadece bir kez çalışsın
+    offset: 100,    // Tetiklenme mesafesi
+  });
+</script>
+<a href="https://wa.me/905372009134?text=Merhaba%2C%20DKT%20Klinik%20web%20sitenizden%20ula%C5%9F%C4%B1yorum%2C%20randevu%20bilgisi%20alabilir%20miyim%3F" 
+   target="_blank" 
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:-translate-y-1 transition-all duration-300 z-50 flex items-center gap-2 group"
+   title="WhatsApp ile Randevu Al">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-3.104-5.391-.704-12.32 4.692-15.423 5.398-3.104 12.321-.705 15.424 4.691 3.105 5.391.705 12.32-4.691 15.423-2.598 1.493-5.484 1.675-8.033.808l-9.079 1.509zm17.529-8.096c-.354-.177-2.095-1.033-2.419-1.151-.323-.118-.558-.177-.793.177-.235.354-.912 1.151-1.118 1.387-.206.235-.411.265-.765.088-2.232-1.114-3.675-2.021-5.14-4.539-.198-.341.21-.497.585-1.246.073-.148.036-.28-.019-.392-.054-.111-.477-1.169-.662-1.59-.179-.407-.368-.356-.504-.364-.128-.008-.274-.008-.42-.008-.146 0-.382.055-.582.273-.2.218-.765.748-.765 1.825 0 1.077.785 2.117.895 2.264.11.147 1.545 2.359 3.744 3.308 1.533.661 1.845.53 2.514.468.668-.062 2.095-.856 2.389-1.682.294-.826.294-1.534.206-1.682-.088-.147-.324-.221-.678-.398z"/>
+    </svg>
+    
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
+        Hızlı Randevu
+    </span>
+</a>
+>>>>>>> 2e1408b9e52733e501ed856586706767b4efdbd9
 </body>
 </html>
